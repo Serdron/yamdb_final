@@ -1,3 +1,5 @@
+![example workflow](https://github.com/Serdron/yamdb_final/actions/workflows/yamdb_workflow.yaml/badge.svg)
+
 # api_yamdb
 ### Описание
 Api_yamdb — это сервис о музыке, фильмах и книгах. На нем вы сможете узнать рейтинги популярных произведений поставить им оценки, написать рецензии и комментарии к ним.
