@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq
 
 DEBUG = os.getenv('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv('HOST', default = '*')
 
 
 INSTALLED_APPS = [
@@ -60,15 +60,21 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 
 DATABASES = {
-    'default': {
+    'production': {
         'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
         'NAME': os.getenv('DB_NAME', default='postgres'),
         'USER': os.getenv('POSTGRES_USER', default='postgres'),
         'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='Database_password'),
         'HOST': os.getenv('DB_HOST', default='db'),
         'PORT': os.getenv('DB_PORT', default='5432')
+    },
+    'dev': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+DATABASES['default']=DATABASES['dev' if os.getenv('BUILD') == 'dev' else 'production']
 
 
 AUTH_PASSWORD_VALIDATORS = [
