@@ -7,7 +7,7 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq
 
 DEBUG = os.getenv('DEBUG', default=False)
 
-ALLOWED_HOSTS = os.getenv('HOST', default = '*')
+ALLOWED_HOSTS = os.getenv('HOST', default='*')
 
 
 INSTALLED_APPS = [
@@ -74,7 +74,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default']=DATABASES['dev' if os.getenv('BUILD') == 'dev' else 'production']
+DATABASES['default'] = DATABASES['dev' if os.getenv('BUILD') == 'dev' else 'production']
 
 
 AUTH_PASSWORD_VALIDATORS = [
