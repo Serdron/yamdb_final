@@ -10,8 +10,8 @@ DEBUG = False
 
 # ALLOWED_HOSTS = os.getenv(
 #    'HOST_LIST', default='51.250.79.6,yatpract.sytes.net,localhost'
-#).split(",")
-ALLOWED_HOSTS =['51.250.79.6','yatpract.sytes.net','localhost']
+# ).split(",")
+ALLOWED_HOSTS = ['51.250.79.6', 'yatpract.sytes.net', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
