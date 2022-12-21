@@ -5,12 +5,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv('SECRET_KEY', default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs')
 
-DEBUG = os.getenv('DEBUG', default=False) #Try this
+DEBUG = os.getenv('DEBUG', default=False)
 
-# ALLOWED_HOSTS = os.getenv(
-#    'HOST_LIST', default='51.250.79.6,yatpract.sytes.net,localhost'
-# ).split(",")
-ALLOWED_HOSTS = ['51.250.79.6', 'yatpract.sytes.net', 'localhost']
+ALLOWED_HOSTS = os.getenv(
+    'HOST_LIST', default='51.250.79.6,yatpract.sytes.net,localhost'
+).split(",")
+# ALLOWED_HOSTS = ['51.250.79.6', 'yatpract.sytes.net', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
