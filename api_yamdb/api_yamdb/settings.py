@@ -7,8 +7,10 @@ SECRET_KEY = os.getenv('SECRET_KEY', default='p&l%385148kslhtyn^##a1)ilz@4zqj=rq
 
 DEBUG = os.getenv('DEBUG', default=False) #Try this
 
-ALLOWED_HOSTS = os.getenv('HOST_LIST', default='*').split(",")
-
+# ALLOWED_HOSTS = os.getenv(
+#    'HOST_LIST', default='51.250.79.6,yatpract.sytes.net,localhost'
+# ).split(",")
+ALLOWED_HOSTS = ['51.250.79.6', 'yatpract.sytes.net', 'localhost']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -105,7 +107,13 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+if DEBUG:
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, 'static'),
+        'var/www/static',
+    ]
+else:
+    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
